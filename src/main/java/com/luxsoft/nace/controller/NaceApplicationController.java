@@ -42,7 +42,8 @@ public class NaceApplicationController {
 	 * @return
 	 */
 	@ApiOperation(value = "Get nace details for an id")
-	@ApiResponses(value = { @ApiResponse(code = 404, message = "Nace details Not found."),
+	@ApiResponses(value = { 
+			@ApiResponse(code = 404, message = "Nace details Not found."),
 			@ApiResponse(code = 200, message = "Fetched details successfully", response = NaceEntity.class) })
 	@GetMapping("/{id}")
 	public NaceEntity getNaceDetails(@PathVariable String id) {
@@ -56,7 +57,8 @@ public class NaceApplicationController {
 	 * @throws IOException
 	 */
 	@ApiOperation(value = "save nace details.")
-	@ApiResponses(value = { @ApiResponse(code = 400, message = "Request cannot be processed due to malformed data."),
+	@ApiResponses(value = { 
+			@ApiResponse(code = 400, message = "Request cannot be processed due to malformed data."),
 			@ApiResponse(code = 200, message = "saved details successful") })
 	@PostMapping(consumes = "multipart/form-data")
 	public void saveNaceDetails(@RequestParam("file") MultipartFile file) throws IOException {
